@@ -136,6 +136,7 @@ export interface RealStoreProduct {
   category: "Merienda" | "Escuela" | "Lectura" | "Diversión";
   priceCoins: number;
   realWorldNote: string;
+  imageSrc: string;
 }
 
 export const REAL_WORLD_PRODUCTS: RealStoreProduct[] = [
@@ -147,6 +148,7 @@ export const REAL_WORLD_PRODUCTS: RealStoreProduct[] = [
     category: "Merienda",
     priceCoins: 60,
     realWorldNote: "Vale canjeable por merienda saludable en OXXO con mamá o papá.",
+    imageSrc: "/src/assets/images/prod_jugo_manzana_1794949077952.jpg",
   },
   {
     id: "oxxo-helado",
@@ -156,6 +158,7 @@ export const REAL_WORLD_PRODUCTS: RealStoreProduct[] = [
     category: "Merienda",
     priceCoins: 85,
     realWorldNote: "Vale válido por 1 paleta o helado individual en OXXO.",
+    imageSrc: "/src/assets/images/prod_helado_paleta_1794949079216.jpg",
   },
   {
     id: "oxxo-combo-escolar",
@@ -165,6 +168,7 @@ export const REAL_WORLD_PRODUCTS: RealStoreProduct[] = [
     category: "Escuela",
     priceCoins: 120,
     realWorldNote: "Vale por paquete escolar básico en tienda OXXO participante.",
+    imageSrc: "/src/assets/images/prod_combo_escolar_1794949078752.jpg",
   },
   {
     id: "lumen-colores",
@@ -174,6 +178,7 @@ export const REAL_WORLD_PRODUCTS: RealStoreProduct[] = [
     category: "Escuela",
     priceCoins: 150,
     realWorldNote: "Vale para canjear en papelería Lumen por set escolar.",
+    imageSrc: "/src/assets/images/prod_colores_libreta_1794949080538.jpg",
   },
   {
     id: "porrua-comic",
@@ -183,6 +188,7 @@ export const REAL_WORLD_PRODUCTS: RealStoreProduct[] = [
     category: "Lectura",
     priceCoins: 180,
     realWorldNote: "Vale válido por libro infantil seleccionado en Porrúa.",
+    imageSrc: "/src/assets/images/prod_libro_aventura_1794949080680.jpg",
   },
   {
     id: "cinepolis-junior",
@@ -192,6 +198,7 @@ export const REAL_WORLD_PRODUCTS: RealStoreProduct[] = [
     category: "Diversión",
     priceCoins: 260,
     realWorldNote: "Cupón familiar para 1 entrada infantil + combo chico en Cinépolis.",
+    imageSrc: "/src/assets/images/prod_cine_palomitas_1794949079823.jpg",
   },
   {
     id: "juguetilandia-set",
@@ -201,6 +208,7 @@ export const REAL_WORLD_PRODUCTS: RealStoreProduct[] = [
     category: "Diversión",
     priceCoins: 340,
     realWorldNote: "Vale de recompensa para juguete de meta grande en Juguetilandia.",
+    imageSrc: "/src/assets/images/prod_juguete_balon_1794949080860.jpg",
   },
 ];
 

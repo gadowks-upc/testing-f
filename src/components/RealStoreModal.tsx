@@ -255,14 +255,31 @@ export const RealStoreModal: React.FC<RealStoreModalProps> = ({
                   </div>
 
                   <div className="p-6 flex flex-col items-center text-center space-y-4">
-                    <div>
-                      <p className="text-xs font-bold text-emerald-700">
-                        ¡Compra confirmada! Muestra este QR en tienda
-                      </p>
-                      <h3 className="text-xl font-display font-extrabold text-slate-900 mt-0.5">
-                        {activeQrVoucher.productName}
-                      </h3>
-                    </div>
+                    {(() => {
+                      const prodImg = REAL_WORLD_PRODUCTS.find(
+                        (p) => p.id === activeQrVoucher.productId
+                      )?.imageSrc;
+                      return (
+                        <div className="flex items-center gap-3 text-left w-full rounded-2xl bg-amber-50/50 border border-amber-200 p-2.5">
+                          {prodImg && (
+                            <img
+                              src={prodImg}
+                              alt={activeQrVoucher.productName}
+                              referrerPolicy="no-referrer"
+                              className="w-16 h-12 rounded-xl object-cover shrink-0 border border-amber-200"
+                            />
+                          )}
+                          <div className="min-w-0">
+                            <p className="text-xs font-bold text-emerald-700">
+                              ¡Compra confirmada! Muestra este QR en tienda
+                            </p>
+                            <h3 className="text-base sm:text-lg font-display font-extrabold text-slate-900 truncate">
+                              {activeQrVoucher.productName}
+                            </h3>
+                          </div>
+                        </div>
+                      );
+                    })()}
 
                     <div className="p-3 rounded-2xl bg-amber-50/70 border-2 border-amber-200">
                       <VoucherQrImage
@@ -372,11 +389,11 @@ export const RealStoreModal: React.FC<RealStoreModalProps> = ({
                   return (
                     <article
                       key={product.id}
-                      className="rounded-2xl bg-white border-2 border-slate-200 overflow-hidden flex flex-col justify-between shadow-sm"
+                      className="group rounded-2xl bg-white border-2 border-slate-200 overflow-hidden flex flex-col justify-between shadow-sm hover:border-amber-400 transition-colors"
                     >
                       <div>
                         <div
-                          className={`px-4 py-3 ${brand.badgeBg} ${brand.badgeText} flex items-center justify-between gap-2`}
+                          className={`px-4 py-2.5 ${brand.badgeBg} ${brand.badgeText} flex items-center justify-between gap-2`}
                           style={{
                             borderBottom: `4px solid ${brand.stripeColor}`,
                           }}
@@ -387,6 +404,15 @@ export const RealStoreModal: React.FC<RealStoreModalProps> = ({
                           <span className="text-[11px] font-bold opacity-90">
                             {product.category}
                           </span>
+                        </div>
+
+                        <div className="relative aspect-[4/3] w-full bg-amber-50 overflow-hidden border-b border-slate-100">
+                          <img
+                            src={product.imageSrc}
+                            alt={product.name}
+                            referrerPolicy="no-referrer"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
                         </div>
 
                         <div className="p-4">
