@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    touch-action: manipulation;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-num {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes characterBounce {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.015);
+  }
+}
+
+@keyframes talkWiggle {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-1.5deg) scale(1.03);
+  }
+  75% {
+    transform: rotate(1.5deg) scale(1.03);
+  }
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(220px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes runnerMapHop {
+  0%, 100% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(2deg);
+  }
+}
+
+@keyframes flagFlutter {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes cloudDrift {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(18px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 3.4s ease-in-out infinite;
+}
+
+.animate-character-idle {
+  animation: characterBounce 2.8s ease-in-out infinite;
+}
+
+.animate-character-talk {
+  animation: talkWiggle 0.45s ease-in-out infinite;
+}
+
+.animate-runner-hop {
+  animation: runnerMapHop 0.9s ease-in-out infinite;
+}
+
+.animate-flag-flutter {
+  animation: flagFlutter 2.2s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.animate-cloud-drift {
+  animation: cloudDrift 9s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-character-idle,
+  .animate-character-talk,
+  .animate-runner-hop,
+  .animate-flag-flutter,
+  .animate-cloud-drift {
+    animation: none;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Misión Ahorro: Aventura Financiera",
+  "description": "Juego móvil en primera persona para niños de 8 a 10 años sobre ahorro y responsabilidad financiera, con quizzes por voz y entrevista en vivo con Don Búho Tesorero.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
